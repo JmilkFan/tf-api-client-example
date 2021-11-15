@@ -1,0 +1,18 @@
+[global]
+WEB_SERVER = {config_api_ip}
+WEB_PORT = 8082
+TIMEOUT = 120
+CONNECTION_TIMEOUT = 5
+insecure=true
+
+[auth]
+AUTHN_TYPE = keystone
+AUTHN_PROTOCOL = htttp
+AUTHN_SERVER = {openstack_keystone_ip}
+AUTHN_PORT = 35357
+AUTHN_URL = http://{openstack_keystone_ip}:35357/v3
+AUTHN_DOMAIN=default
+AUTHN_TENANT=admin
+AUTHN_USER={your_usernmae}
+AUTHN_PASSWORD={your_password}
+insecure=true
