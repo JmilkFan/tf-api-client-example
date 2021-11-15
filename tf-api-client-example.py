@@ -2,15 +2,14 @@ import optparse
 import os
 import sys
 
-from vnc_api import vnc_api
 from use_cases import network_ipams
 from use_cases import virtual_networks
 
 USE_CASES = {
-    'create_ipam_with_flat_subnet': network_ipams.create_ipam_with_flat_subnet, # noqa
-    'create_ipam_with_user_defined_subnet': network_ipams.create_ipam_with_user_defined_subnet, # noqa
-    'create_virtal_network_with_flat_subnet': virtual_networks.create_virtal_network_with_flat_subnet, # noqa
-    'create_virtal_network_with_user_defined_subnet': virtual_networks.create_virtal_network_with_user_defined_subnet, # noqa
+    'create_ipam_with_flat_subnet': network_ipams.create_ipam_with_flat_subnet,  # noqa
+    'create_ipam_with_user_defined_subnet': network_ipams.create_ipam_with_user_defined_subnet,  # noqa
+    'create_virtal_network_with_flat_subnet': virtual_networks.create_virtal_network_with_flat_subnet,  # noqa
+    'create_virtal_network_with_user_defined_subnet': virtual_networks.create_virtal_network_with_user_defined_subnet,  # noqa
 }
 
 
@@ -29,7 +28,7 @@ def parse_args():
                  type='choice', choices=USE_CASES.keys(),
                  help="Choice the use case.")
 
-    options, args = p.parse_args()
+    options, _ = p.parse_args()
 
     if (options.conf_file and options.use_case) is None:
         p.error("plase use the help -h | --help")

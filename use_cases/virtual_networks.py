@@ -19,7 +19,7 @@ def create_virtal_network_with_flat_subnet(conf_file):
 
     # Create Virtual Network Object
     vn_name = str(uuid.uuid4())
-    print "create virtual network [%s]" % vn_name
+    print("create virtual network [%s]", vn_name)
     vn_o = vnc_api.VirtualNetwork(name=vn_name,
                                   parent_obj=project_o,
                                   virtual_network_properties=vn_t)
@@ -51,7 +51,7 @@ def create_virtal_network_with_user_defined_subnet(conf_file):
 
     # Create Virtual Network Object
     vn_name = str(uuid.uuid4())
-    print "create virtual network [%s]" % vn_name
+    print("create virtual network [%s]", vn_name)
     vn_o = vnc_api.VirtualNetwork(name=vn_name,
                                   parent_obj=project_o,
                                   virtual_network_properties=vn_t)
